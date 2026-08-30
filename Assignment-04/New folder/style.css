@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#111;
+}
+
+/* NAVBAR */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+}
+
+nav a{
+    margin:0 15px;
+    text-decoration:none;
+    color:#111;
+    font-size:14px;
+}
+
+.icons{
+    display:flex;
+    gap:15px;
+    font-size:18px;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    margin-top:30px;
+    position:relative;
+}
+
+.hero h1{
+    font-size:48px;
+    font-weight:800;
+    line-height:1.2;
+}
+
+/* SIDE TEXT */
+.side-left{
+    position:absolute;
+    left:40px;
+    top:200px;
+    width:150px;
+    font-size:14px;
+    color:#333;
+}
+
+.side-right{
+    position:absolute;
+    right:40px;
+    top:260px;
+    writing-mode:vertical-rl;
+    font-size:12px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:20px;
+    padding:60px;
+    align-items:center;
+}
+
+.card{
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* fake colored blocks if image missing */
+.block{
+    height:220px;
+    border-radius:20px;
+}
+
+/* different colors like original */
+.orange{background:#ffb74d;}
+.blue{background:#64b5f6;}
+.pink{background:#f48fb1;}
+.purple{background:#b39ddb;}
+.green{background:#81c784;}
+
+/* CENTER BIG CARD */
+.big{
+    height:420px;
+}
+
+/* bottom section */
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    padding:40px 60px;
+    align-items:flex-end;
+}
+
+.quote{
+    max-width:300px;
+    font-size:14px;
+    color:#444;
+}
+
+.blog{
+    text-align:right;
+}
+
+.btn{
+    padding:10px 20px;
+    border:1px solid #111;
+    border-radius:20px;
+    background:#fff;
+    cursor:pointer;
+}
