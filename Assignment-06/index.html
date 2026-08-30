@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow — Vanilla JS Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+  <header class="site-header">
+    <div>
+      <h1>TaskFlow</h1>
+    </div>
+
+    <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+      🌙 Dark Mode
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="panel hero-panel">
+      <div>
+        <h2>Manage your tasks</h2>
+        <p>Create, edit, complete, search and filter tasks without refreshing the page.</p>
+      </div>
+
+      <div class="stats" aria-label="Task statistics">
+        <div class="stat-card"><span id="totalCount">0</span><small>Total</small></div>
+        <div class="stat-card"><span id="pendingCount">0</span><small>Pending</small></div>
+        <div class="stat-card"><span id="completedCount">0</span><small>Completed</small></div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="create-title">
+      <div class="section-heading">
+        <div>
+
+          <h2 id="create-title">Create Task</h2>
+        </div>
+      </div>
+
+      <form id="taskForm" class="task-form">
+        <div class="field">
+          <label for="taskTitle">Task Title</label>
+          <input id="taskTitle" name="taskTitle" type="text" placeholder="e.g. Learn DOM manipulation" required
+            maxlength="100">
+        </div>
+
+        <div class="field">
+          <label for="taskCategory">Category</label>
+          <select id="taskCategory" name="taskCategory">
+            <option value="Study">Study</option>
+            <option value="Coding">Coding</option>
+            <option value="Project">Project</option>
+            <option value="Personal">Personal</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <button class="primary-btn" type="submit">＋ Add Task</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="tasks-title">
+      <div class="section-heading task-toolbar">
+        <div>
+
+          <h2 id="tasks-title">Your Tasks</h2>
+        </div>
+        <button id="clearAll" class="danger-outline" type="button">Clear All</button>
+      </div>
+
+      <div class="filters">
+        <input id="searchInput" type="search" placeholder="🔎 Search tasks..." aria-label="Search tasks">
+        <select id="filterCategory" aria-label="Filter by category">
+          <option value="all">All Categories</option>
+          <option value="Study">Study</option>
+          <option value="Coding">Coding</option>
+          <option value="Project">Project</option>
+          <option value="Personal">Personal</option>
+          <option value="Other">Other</option>
+        </select>
+        <select id="filterStatus" aria-label="Filter by status">
+          <option value="all">All Statuses</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div id="taskList" class="task-list" aria-live="polite"></div>
+
+      <p id="emptyState" class="empty-state">
+        No tasks yet. Add your first task above.
+      </p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
