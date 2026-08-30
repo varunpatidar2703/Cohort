@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+body html{
+    height: 100vh;
+    width: 100wh;
+}
+section{
+    background: linear-gradient(to right, rgb(250,198,8) 69%, beige 31%);
+    margin: 50px;
+    border-radius: 30px;
+    padding: 10px;
+}
+nav{
+    display: flex;
+    align-items: normal;
+    justify-content: space-between;
+    margin: 50px;
+}
+#menuicon{
+    font-size: 45px;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 20px  0 20px;
+    font-size: 25px;
+}
+.had{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+#para{
+    line-height: 30px;
+    font-size: 22px;
+    text-align: start;
+}
+#box-left img{
+    width: 50%;
+    height: 50%;
+}
+#box-right img{
+    size: 50px;
+}
