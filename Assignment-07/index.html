@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinTrack Pro — Personal Finance Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <section class="auth-screen" id="authScreen">
+    <div class="auth-card">
+      <div class="brand auth-brand"><div class="brand-mark">F</div> FinTrack Pro</div>
+
+      <div id="loginPanel">
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-subtitle">Sign in to manage your personal finances.</p>
+        <form class="auth-form" id="loginForm">
+          <div>
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" autocomplete="email" required placeholder="you@example.com">
+          </div>
+          <div>
+            <label for="loginPassword">Password</label>
+            <div class="password-wrap">
+              <input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Enter your password">
+              <button class="show-password" type="button" data-target="loginPassword">Show</button>
+            </div>
+          </div>
+          <div class="auth-error" id="loginError"></div>
+          <button class="btn btn-primary auth-submit" type="submit">Login</button>
+        </form>
+        <p class="auth-switch">Don't have an account? <button type="button" id="showRegister">Create one</button></p>
+        <p class="auth-note">Your account and finance data are stored locally in this browser. No server is used.</p>
+      </div>
+
+      <div id="registerPanel" style="display:none">
+        <h1 class="auth-title">Create your account</h1>
+        <p class="auth-subtitle">Start tracking your money in seconds.</p>
+        <form class="auth-form" id="registerForm">
+          <div>
+            <label for="registerName">Display name</label>
+            <input id="registerName" type="text" maxlength="40" autocomplete="name" required placeholder="Your name">
+          </div>
+          <div>
+            <label for="registerEmail">Email</label>
+            <input id="registerEmail" type="email" autocomplete="email" required placeholder="you@example.com">
+          </div>
+          <div>
+            <label for="registerPassword">Password</label>
+            <div class="password-wrap">
+              <input id="registerPassword" type="password" minlength="6" autocomplete="new-password" required placeholder="At least 6 characters">
+              <button class="show-password" type="button" data-target="registerPassword">Show</button>
+            </div>
+          </div>
+          <div>
+            <label for="registerConfirm">Confirm password</label>
+            <div class="password-wrap">
+              <input id="registerConfirm" type="password" minlength="6" autocomplete="new-password" required placeholder="Repeat your password">
+              <button class="show-password" type="button" data-target="registerConfirm">Show</button>
+            </div>
+          </div>
+          <div class="auth-error" id="registerError"></div>
+          <div class="auth-success" id="registerSuccess"></div>
+          <button class="btn btn-primary auth-submit" type="submit">Register</button>
+        </form>
+        <p class="auth-switch">Already have an account? <button type="button" id="showLogin">Login</button></p>
+        <p class="auth-note">For this browser-only demo, credentials are stored in localStorage. This is not suitable for production authentication.</p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="navbar" id="appNav" style="display:none">
+    <div class="brand"><div class="brand-mark">F</div> FinTrack Pro</div>
+    <div class="nav-links">
+      <button class="nav-link active" data-page="dashboard">Dashboard</button>
+      <button class="nav-link" data-page="settings">Settings</button>
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-primary add" id="openModal">+ Add Transaction</button>
+      <button class="btn logout" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <main id="appMain" style="display:none">
+    <section class="page active" id="dashboard">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Personal Finance</div>
+          <h1 id="welcomeTitle">Good evening</h1>
+          <p class="sub">See where your money goes, at a glance.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card stat balance"><div class="stat-label">Current Balance</div><div class="stat-value" id="balance">₹0.00</div></div>
+        <div class="card stat income"><div class="stat-label">Total Income</div><div class="stat-value" id="income">₹0.00</div></div>
+        <div class="card stat expense"><div class="stat-label">Total Expense</div><div class="stat-value" id="expense">₹0.00</div></div>
+        <div class="card stat"><div class="stat-label">Total Transactions</div><div class="stat-value" id="count">0</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          <h2>Cash Flow</h2>
+          <span class="sub">Income vs. expense over time</span>
+        </div>
+        <div class="chart-wrap"><canvas id="cashFlowChart"></canvas></div>
+      </div>
+
+      <div class="panel">
+        <div class="toolbar">
+          <div>
+            <h2 style="margin:0 0 4px;font-size:17px">Transactions</h2>
+            <div class="sub">Your saved income and expenses</div>
+          </div>
+          <div class="filters">
+            <button class="filter active" data-filter="all">All Types</button>
+            <button class="filter" data-filter="income">Income Only</button>
+            <button class="filter" data-filter="expense">Expense Only</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Amount</th><th>Action</th></tr></thead>
+            <tbody id="transactionBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="settings">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Preferences</div>
+          <h1>Settings</h1>
+          <p class="sub">Customize your FinTrack Pro experience.</p>
+        </div>
+      </div>
+
+      <div class="settings-grid">
+        <div class="panel setting">
+          <h3>Profile</h3>
+          <p>Your display name appears on the dashboard. It is stored only in this browser.</p>
+          <label for="profileName">Display name</label>
+          <input id="profileName" type="text" maxlength="40" placeholder="Your name">
+          <div class="save-row"><button class="btn btn-primary" id="saveProfile">Save Profile</button></div>
+        </div>
+
+        <div class="panel setting">
+          <h3>Currency</h3>
+          <p>Change the symbol used to display your existing transaction amounts.</p>
+          <label for="currency">Preferred currency</label>
+          <select id="currency">
+            <option value="USD">$ — USD</option>
+            <option value="EUR">€ — EUR</option>
+            <option value="GBP">£ — GBP</option>
+            <option value="INR">₹ — INR</option>
+            <option value="JPY">¥ — JPY</option>
+          </select>
+          <div class="save-row"><button class="btn btn-primary" id="saveCurrency">Save Currency</button></div>
+        </div>
+
+        <div class="panel setting">
+          <div class="switch-row">
+            <div><h3>Dark Mode</h3><p style="margin-bottom:0">Use a deep navy theme and remember it on your next visit.</p></div>
+            <label class="switch"><input type="checkbox" id="darkMode"><span class="slider"></span></label>
+          </div>
+        </div>
+
+        <div class="panel setting">
+          <h3>Reset Everything</h3>
+          <p>Delete all transactions and reset your profile and preferences to their defaults. This cannot be undone.</p>
+          <button class="btn btn-danger" id="resetBtn">Reset All Data</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="transactionModal">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h2 id="modalTitle">Add Transaction</h2>
+        <button class="close" id="closeModal" aria-label="Close">×</button>
+      </div>
+      <form id="transactionForm">
+        <div class="form-grid">
+          <div class="field full">
+            <label>Type</label>
+            <div class="radio-group">
+              <label class="radio"><input type="radio" name="type" value="income" checked><span>Income</span></label>
+              <label class="radio"><input type="radio" name="type" value="expense"><span>Expense</span></label>
+            </div>
+          </div>
+          <div class="field full">
+            <label for="description">Description</label>
+            <input id="description" name="description" required maxlength="80" placeholder="e.g. Monthly salary">
+          </div>
+          <div class="field">
+            <label for="amount">Amount</label>
+            <input id="amount" name="amount" type="number" min="0.01" step="0.01" required placeholder="0.00">
+          </div>
+          <div class="field">
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date" required>
+          </div>
+          <div class="field full">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Choose a category</option>
+              <option>Food & Dining</option><option>Shopping</option><option>Recharge & Bills</option>
+              <option>Petrol & Auto</option><option>Utilities</option><option>Salary</option>
+              <option>Entertainment</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="error" id="formError"></div>
+        <div class="modal-actions">
+          <button type="button" class="btn" id="cancelModal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Transaction</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js">
+
+    
+  </script>
+</body>
+</html>
