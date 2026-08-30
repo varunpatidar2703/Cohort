@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>LOMBOK — Holistic Health & More</title>
+ 
+  <script src="https://cdn.tailwindcss.com"></script>
+
+   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+
+  
+
+  <style>
+    
+  </style>
+</head>
+
+<body class="font-sans">
+
+  
+  <header class="hero-pattern min-h-screen relative text-white">
+
+     
+    <nav class="absolute top-0 left-0 w-full z-20">
+      <div
+        class="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-7
+               flex items-center justify-between"
+      >
+ 
+        <a
+          href="#"
+          class="text-2xl md:text-3xl font-medium tracking-[0.22em]"
+        >
+          LO
+        </a>
+
+ 
+        <div class="hidden md:flex items-center gap-10 text-sm tracking-[0.18em]">
+          <a href="#home" class="underline-link">HOME</a>
+          <a href="#articles" class="underline-link">ARTICLES</a>
+          <a href="#about" class="underline-link">ABOUT</a>
+          <a href="#subscribe" class="underline-link">SUBSCRIBE</a>
+        </div>
+ 
+        <button
+          id="menuButton"
+          class="md:hidden flex flex-col gap-1.5"
+          aria-label="Open menu"
+        >
+          <span class="w-7 h-px bg-white"></span>
+          <span class="w-7 h-px bg-white"></span>
+          <span class="w-7 h-px bg-white"></span>
+        </button>
+      </div> 
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-[#4F5947]/95 backdrop-blur-sm px-6 py-7"
+      >
+        <div class="flex flex-col gap-6 text-sm tracking-[0.18em]">
+          <a href="#home">HOME</a>
+          <a href="#articles">ARTICLES</a>
+          <a href="#about">ABOUT</a>
+          <a href="#subscribe">SUBSCRIBE</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div
+      id="home"
+      class="min-h-screen flex items-center justify-center text-center px-6"
+    >
+      <div class="max-w-3xl">
+
+        <p
+          class="uppercase tracking-[0.5em] text-sm md:text-base mb-7
+                 text-white/90"
+        >
+          Holistic Health & More
+        </p>
+
+        <h1
+          class="font-serif text-7xl sm:text-8xl md:text-9xl
+                 font-normal tracking-wide"
+        >
+          lombok
+        </h1>
+
+        <div class="mx-auto mt-9 w-16 h-px bg-white/80"></div>
+
+        <p
+          class="mt-8 max-w-xl mx-auto text-sm md:text-base
+                 leading-8 tracking-wide text-white/90"
+        >
+          Discover a more balanced way of living through mindful habits,
+          natural wellness and everyday inspiration.
+        </p>
+
+        <a
+          href="#articles"
+          class="inline-block mt-10 border border-white px-8 py-4
+                 text-xs tracking-[0.25em] hover:bg-white
+                 hover:text-[#4F5947] transition duration-300"
+        >
+          EXPLORE
+        </a>
+
+      </div>
+    </div>
+
+    <div
+      class="absolute bottom-8 left-1/2 -translate-x-1/2
+             flex flex-col items-center gap-3"
+    >
+      <span class="text-[10px] tracking-[0.3em]">SCROLL</span>
+      <span class="w-px h-10 bg-white/60"></span>
+    </div>
+
+  </header>
+
+
+   
+  <section
+    id="articles"
+    class="py-24 md:py-32 bg-cream"
+  >
+    <div class="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+
+      
+      <div class="text-center mb-16 md:mb-20">
+
+        <p
+          class="text-xs tracking-[0.35em] uppercase
+                 text-olive mb-5"
+        >
+          Discover & Learn
+        </p>
+
+        <h2
+          class="font-serif text-4xl md:text-5xl
+                 font-normal text-charcoal"
+        >
+          Latest Articles
+        </h2>
+
+        <div class="w-12 h-px bg-olive mx-auto mt-7"></div>
+      </div>
+
+
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+
+        
+        <article class="image-card group">
+
+          <div class="overflow-hidden aspect-[4/5] bg-gray-200">
+            <img
+              src="image/photo-1511936606692-5e0d73f6b638.avif"
+              alt="Mindfulness and meditation"
+              class="w-full h-full object-cover"
+            >
+          </div>
+
+          <div class="pt-7">
+
+            <p
+              class="text-[10px] tracking-[0.3em]
+                     uppercase text-olive mb-4"
+            >
+              Mindfulness
+            </p>
+
+            <h3
+              class="font-serif text-2xl md:text-[27px]
+                     leading-tight text-charcoal"
+            >
+              How to use mindfulness
+              in your everyday life.
+            </h3>
+
+            <p
+              class="mt-5 text-sm leading-7
+                     text-gray-600"
+            >
+              Simple practices to help you slow down,
+              reconnect and bring more awareness into
+              your daily routine.
+            </p>
+
+            <a
+              href="#"
+              class="inline-block mt-6 text-xs
+                     tracking-[0.2em] text-olive
+                     underline-link"
+            >
+              READ MORE
+            </a>
+
+          </div>
+        </article>
+
+
+        
+        <article class="image-card group">
+
+          <div class="overflow-hidden aspect-[4/5] bg-gray-200">
+            <img
+              src="image/photo-1624817670169-57a1245cf3f1.avif"
+              alt="Healthy natural lifestyle"
+              class="w-full h-full object-cover"
+            >
+          </div>
+
+          <div class="pt-7">
+
+            <p
+              class="text-[10px] tracking-[0.3em]
+                     uppercase text-olive mb-4"
+            >
+              Lifestyle
+            </p>
+
+            <h3
+              class="font-serif text-2xl md:text-[27px]
+                     leading-tight text-charcoal"
+            >
+              How to use mindfulness
+              in your everyday life.
+            </h3>
+
+            <p
+              class="mt-5 text-sm leading-7
+                     text-gray-600"
+            >
+              Explore small lifestyle changes that can
+              create a calmer, healthier and more
+              intentional everyday experience.
+            </p>
+
+            <a
+              href="#"
+              class="inline-block mt-6 text-xs
+                     tracking-[0.2em] text-olive
+                     underline-link"
+            >
+              READ MORE
+            </a>
+
+          </div>
+        </article>
+
+
+        
+        <article class="image-card group">
+
+          <div class="overflow-hidden aspect-[4/5] bg-gray-200">
+            <img
+              src="image/photo-1536431311719-398b6704d4cc.avif"
+              alt="Wellness and meditation"
+              class="w-full h-full object-cover"
+            >
+          </div>
+
+          <div class="pt-7">
+
+            <p
+              class="text-[10px] tracking-[0.3em]
+                     uppercase text-olive mb-4"
+            >
+              Wellness
+            </p>
+
+            <h3
+              class="font-serif text-2xl md:text-[27px]
+                     leading-tight text-charcoal"
+            >
+              How to use mindfulness
+              in your everyday life.
+            </h3>
+
+            <p
+              class="mt-5 text-sm leading-7
+                     text-gray-600"
+            >
+              Find inspiration for creating moments of
+              stillness and balance wherever your day
+              takes you.
+            </p>
+
+            <a
+              href="#"
+              class="inline-block mt-6 text-xs
+                     tracking-[0.2em] text-olive
+                     underline-link"
+            >
+              READ MORE
+            </a>
+
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+ 
+  <section
+    id="about"
+    class="py-24 md:py-32 bg-[#E8E8DE]"
+  >
+    <div
+      class="max-w-6xl mx-auto px-6 md:px-10
+             grid md:grid-cols-2 gap-14 md:gap-24
+             items-center"
+    >
+ 
+      <div class="order-2 md:order-1">
+
+        <div class="aspect-[4/5] overflow-hidden">
+          <img
+            src="image/photo-1621849400072-f554417f7051.avif"
+            alt="Holistic wellness"
+            class="w-full h-full object-cover"
+          >
+        </div>
+
+      </div>
+
+
+       
+      <div class="order-1 md:order-2">
+
+        <p
+          class="text-xs uppercase tracking-[0.35em]
+                 text-olive mb-6"
+        >
+          About
+        </p>
+
+        <h2
+          class="font-serif text-4xl md:text-5xl
+                 leading-tight text-charcoal mb-8"
+        >
+          A holistic approach
+          to a healthier life.
+        </h2>
+
+        <div class="w-12 h-px bg-olive mb-8"></div>
+
+        <p
+          class="text-sm md:text-base
+                 leading-8 text-gray-600"
+        >
+          Holistic health is an approach to healthcare
+          that considers the whole person — body, mind,
+          spirit, and emotions — in the pursuit of optimal
+          health and wellness.
+        </p>
+
+        <p
+          class="mt-6 text-sm md:text-base
+                 leading-8 text-gray-600"
+        >
+          It emphasizes the interconnectedness of these
+          aspects and seeks to address imbalances or
+          disharmonies that may arise within them.
+          Wellness begins when we start caring for every
+          part of ourselves.
+        </p>
+
+        <a
+          href="#subscribe"
+          class="inline-block mt-9 border border-olive
+                 px-8 py-4 text-xs tracking-[0.22em]
+                 text-olive hover:bg-olive
+                 hover:text-white transition duration-300"
+        >
+          LEARN MORE
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+ 
+  <section
+    id="subscribe"
+    class="py-24 md:py-32"
+  >
+    <div
+      class="max-w-3xl mx-auto px-6
+             text-center"
+    >
+
+      <p
+        class="text-xs uppercase
+               tracking-[0.35em] text-white/70 mb-6"
+      >
+        Stay Connected
+      </p>
+
+      <h2
+        class="font-serif text-4xl md:text-5xl
+               font-normal"
+      >
+        Sign-Up to our Newsletter
+      </h2>
+
+      <p
+        class="mt-6 text-sm leading-7
+                max-w-lg mx-auto"
+      >
+        Get thoughtful wellness inspiration, new
+        articles and simple ideas for living a more
+        balanced life.
+      </p>
+
+
+    
+      <form
+        id="subscribeForm"
+        class="mt-10 max-w-xl mx-auto"
+      >
+
+        <div
+          class="flex flex-col sm:flex-row
+                 border-b border-white/50"
+        >
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Your email"
+            required
+            class="flex-1  
+                   px-2 py-4  
+                   placeholder:text-black/50
+                   text-sm"
+          >
+
+          <button
+            type="submit"
+            class="px-7 py-4 mt-3 sm:mt-0
+                    border-black
+                   bg-white text-olive
+                   text-xs tracking-[0.2em]
+                   hover:bg-[#e8e8de]
+                   transition"
+          >
+            SUBMIT
+          </button>
+
+        </div>
+
+        <p
+          id="formMessage"
+          class="hidden mt-5 text-sm text-white/80"
+        ></p>
+
+      </form>
+
+    </div>
+  </section>
+
+ 
+  <footer class="bg-[#30352D] text-white">
+
+    <div
+      class="max-w-7xl mx-auto px-6 md:px-10
+             lg:px-16 py-10"
+    >
+
+      <div
+        class="flex flex-col md:flex-row
+               items-center justify-between gap-6"
+      >
+
+        <div
+          class="text-xl tracking-[0.2em]"
+        >
+          LO
+        </div>
+
+        <p
+          class="text-[10px] tracking-[0.2em]
+                 text-white/50 uppercase"
+        >
+          © 2026 Lombok. All rights reserved.
+        </p>
+
+        <div
+          class="flex gap-6 text-[10px]
+                 tracking-[0.2em]"
+        >
+          <a href="#" class="hover:text-white/60 transition">
+            INSTAGRAM
+          </a>
+
+          <a href="#" class="hover:text-white/60 transition">
+            PINTEREST
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+ 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            olive: "#66705A",
+            darkolive: "#4F5947",
+            cream: "#F7F6F0",
+            charcoal: "#30332E"
+          },
+
+          fontFamily: {
+            sans: ["Montserrat", "sans-serif"],
+            serif: ["Playfair Display", "serif"]
+          },
+
+          letterSpacing: {
+            widest2: ".25em"
+          }
+        }
+      }
+    }
+
+     
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+
+    
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+ 
+    const subscribeForm =
+      document.getElementById("subscribeForm");
+
+    const formMessage =
+      document.getElementById("formMessage");
+
+    subscribeForm.addEventListener("submit", (event) => {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById("email").value;
+
+      if (email) {
+
+        formMessage.textContent =
+          "Thank you for subscribing!";
+
+        formMessage.classList.remove("hidden");
+
+        subscribeForm.reset();
+      }
+    });
+
+  </>
+
+</body>
+</html>
