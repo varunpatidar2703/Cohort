@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    padding: 30px 60px;
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #ff5b16;
+}
+
+.btn-primary {
+    padding: 14px 28px;
+    background: #111;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: #ff5b16;
+}
+
+/* Hero */
+
+.hero {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 10vw, 140px);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 40px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.filters button {
+    border: none;
+    background: #171717;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.filters button.active {
+    background: #ff5b16;
+}
+
+/* Blog Cards */
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #0d0d0d;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(255, 91, 22, 0.15);
+    color: #ff5b16;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #8f8f8f;
+    font-size: 15px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+    }
+}
