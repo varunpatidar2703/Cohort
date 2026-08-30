@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Explore Art Work</h1>
+  <div class="gallery">
+    <div class="card">
+      <img src="image/Screenshot 2026-06-05 121817.png" alt="Monocular">
+      <div class="card-content">
+        <h2>Monocular</h2>
+        <div class="likes">54.8k ♥</div>
+        <button class="bid-btn" onclick="placeBid('Monocular')">Place Bid</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Screenshot 2026-06-05 121843.png" alt="Horns Mask">
+      <div class="card-content">
+        <h2>Horns Mask</h2>
+        <div class="likes">32.4k ♥</div>
+        <button class="bid-btn" onclick="placeBid('Horns Mask')">Place Bid</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Screenshot 2026-06-05 122028.png" alt="Light Moon">
+      <div class="card-content">
+        <h2>Light Moon</h2>
+        <div class="likes">86.6k ♥</div>
+        <button class="bid-btn" onclick="placeBid('Light Moon')">Place Bid</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Screenshot 2026-06-05 122042.png" alt="Skull Wire">
+      <div class="card-content">
+        <h2>Skull Wire</h2>
+        <div class="likes">78.9k ♥</div>
+        <button class="bid-btn" onclick="placeBid('Skull Wire')">Place Bid</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function placeBid(name) {
+      alert(`You placed a bid on "${name}"!`);
+    }
+  </script>
+</body>
+</html>
