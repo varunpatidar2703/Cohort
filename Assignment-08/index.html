@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Single-page productivity dashboard with tasks, planner, Pomodoro, goals, quotes, weather, date/time and themes.">
+  <title>Productivity Dashboard</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("productivity-theme");
+      if (saved === "dark") document.documentElement.classList.add("dark");
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">✓</div>
+        <div>
+          <h1>FocusFlow</h1>
+          <p>Your daily productivity space</p>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="datetime compact">
+          <span id="headerTime">--:--:--</span>
+          <small id="headerDate">Loading date...</small>
+        </div>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+          <span id="themeIcon">☾</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="dashboard-view" id="dashboardView">
+        <div class="hero">
+          <div>
+            <p class="eyebrow" id="greeting">GOOD DAY</p>
+            <h2>Make today count.</h2>
+            <p>Choose a tool below and keep your focus moving forward.</p>
+          </div>
+          <div class="hero-date">
+            <span id="heroDay">Sunday</span>
+            <strong id="heroDate">06 Sep 2026</strong>
+          </div>
+        </div>
+
+        <section class="quick-widgets">
+          <article class="widget weather-widget" id="weatherWidget">
+            <div class="widget-head">
+              <div>
+                <span class="widget-label">WEATHER</span>
+                <h3 id="weatherLocation">Getting location...</h3>
+              </div>
+              <span class="weather-icon" id="weatherIcon">☁</span>
+            </div>
+            <div class="weather-main">
+              <strong id="weatherTemp">--°</strong>
+              <span id="weatherCondition">Loading weather...</span>
+            </div>
+            <div class="weather-details">
+              <span>💧 <b id="weatherHumidity">--%</b> humidity</span>
+              <span>💨 <b id="weatherWind">-- km/h</b></span>
+            </div>
+          </article>
+
+          <article class="widget clock-widget">
+            <span class="widget-label">DATE & TIME</span>
+            <div class="big-clock" id="mainTime">--:--</div>
+            <div class="full-date" id="mainDate">Loading...</div>
+            <div class="clock-zone">Local browser time</div>
+          </article>
+
+          <article class="widget quote-widget">
+            <span class="widget-label">MOTIVATION</span>
+            <blockquote id="quoteText">Loading an inspiring thought...</blockquote>
+            <cite id="quoteAuthor">— FocusFlow</cite>
+            <button class="text-btn" id="newQuoteBtn">↻ New quote</button>
+          </article>
+        </section>
+
+        <section class="feature-grid" aria-label="Productivity features">
+          <button class="feature-card todo-card" data-feature="todo">
+            <span class="feature-icon">✓</span>
+            <span><strong>Todo List</strong><small id="todoSummary">Plan your tasks</small></span>
+            <span class="arrow">→</span>
+          </button>
+
+          <button class="feature-card planner-card" data-feature="planner">
+            <span class="feature-icon">▦</span>
+            <span><strong>Daily Planner</strong><small>Organize your hours</small></span>
+            <span class="arrow">→</span>
+          </button>
+
+          <button class="feature-card pomodoro-card" data-feature="pomodoro">
+            <span class="feature-icon">◷</span>
+            <span><strong>Pomodoro</strong><small>Focus in sessions</small></span>
+            <span class="arrow">→</span>
+          </button>
+
+          <button class="feature-card goals-card" data-feature="goals">
+            <span class="feature-icon">★</span>
+            <span><strong>Daily Goals</strong><small id="goalsSummary">Set today's targets</small></span>
+            <span class="arrow">→</span>
+          </button>
+        </section>
+      </section>
+
+      <section class="feature-view hidden" id="featureView">
+        <div class="feature-panel" id="featurePanel">
+          <!-- Feature content is injected here by script.js -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>FocusFlow • Productivity Dashboard</span>
+      <span>Built with HTML • CSS • JavaScript</span>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
