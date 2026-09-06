@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkyMart-inspired shopping experience with a redesigned color system and UX.">
+  <title>NovaCart — Modern Shopping</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">Free delivery on orders over ₹999 <span>•</span> Easy 7-day returns</div>
+
+  <header class="header">
+    <a class="logo" href="#"><span>✦</span> NovaCart</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#deals">Deals</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☼</button>
+      <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+      <button class="cart-btn" id="cartBtn">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">CURATED FOR YOUR EVERYDAY</p>
+        <h1>Good products.<br><em>Better choices.</em></h1>
+        <p class="hero-text">Discover everyday essentials, smart tech and lifestyle favorites in one calm, simple shopping space.</p>
+        <div class="hero-actions"><a class="primary" href="#shop">Shop collection →</a><a class="secondary" href="#categories">Explore categories</a></div>
+        <div class="trust-row"><span>✓ Secure checkout</span><span>✓ 7-day returns</span><span>✓ Fast delivery</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="blob"></div>
+        <div class="hero-card">
+          <span class="mini-tag">NEW DROP</span>
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85" alt="Minimal watch">
+          <div class="hero-product"><strong>Minimal Timepiece</strong><span>₹2,499</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap categories" id="categories">
+      <div class="section-head"><div><p class="eyebrow">BROWSE</p><h2>Shop by category</h2></div><span class="muted">Pick a mood, find a favorite.</span></div>
+      <div class="category-grid">
+        <button class="category" data-category="Tech"><span>⌁</span><b>Tech</b><small>Gadgets & gear</small></button>
+        <button class="category" data-category="Fashion"><span>◈</span><b>Fashion</b><small>Modern essentials</small></button>
+        <button class="category" data-category="Home"><span>⌂</span><b>Home</b><small>Comfort & design</small></button>
+        <button class="category" data-category="Beauty"><span>✦</span><b>Beauty</b><small>Daily self-care</small></button>
+      </div>
+    </section>
+
+    <section class="wrap shop" id="shop">
+      <div class="section-head">
+        <div><p class="eyebrow">TRENDING NOW</p><h2>Popular picks</h2></div>
+        <div class="controls">
+          <input id="searchInput" class="search" placeholder="Search products..." aria-label="Search products">
+          <select id="sortSelect"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select>
+        </div>
+      </div>
+      <div id="chips" class="chips"><button class="chip active" data-filter="All">All</button><button class="chip" data-filter="Tech">Tech</button><button class="chip" data-filter="Fashion">Fashion</button><button class="chip" data-filter="Home">Home</button><button class="chip" data-filter="Beauty">Beauty</button></div>
+      <div id="products" class="product-grid"></div>
+    </section>
+
+    <section class="deal wrap" id="deals">
+      <div><p class="eyebrow">LIMITED OFFER</p><h2>Refresh your everyday.</h2><p>Save up to 30% on selected lifestyle favorites this week.</p></div>
+      <a class="primary" href="#shop">View deals →</a>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><strong>✦ NovaCart</strong><span>Inspired by the provided SkyMart project, redesigned with a new visual system and UX.</span><span>© 2026 NovaCart</span></div></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag">
+    <div class="drawer-head"><h2>Your bag</h2><button id="closeCart" class="close">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+    <button class="primary checkout" id="checkout">Continue to checkout</button>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
