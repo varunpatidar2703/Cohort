@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A GSAP-powered developer portfolio built for Mini Hackathon Round 2." />
+  <title>Devon Ray — Creative Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="logo magnetic" href="#top" aria-label="Home">DR<span>.</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta magnetic" href="#contact">Let's talk <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero section-pad">
+      <div class="hero-grid"></div>
+      <div class="hero-orb orb-a"></div>
+      <div class="hero-orb orb-b"></div>
+      <div class="hero-copy">
+        <p class="eyebrow hero-reveal"><span class="dot"></span> Creative Developer / GSAP Explorer</p>
+        <h1 class="hero-title"><span class="line"><span>Ideas that</span></span><span class="line"><span>move <em>people.</em></span></span></h1>
+        <p class="hero-text hero-reveal">I build expressive digital experiences where thoughtful design meets clean front-end engineering, with motion that has a reason to exist.</p>
+        <div class="hero-actions hero-reveal">
+          <a class="btn btn-primary magnetic" href="#work">Explore my work <span>↓</span></a>
+          <a class="text-link" href="#contact">Available for opportunities <span>↗</span></a>
+        </div>
+      </div>
+      <div class="hero-meta hero-reveal">
+        <span>Based in India</span><span>Available worldwide</span><span>2026</span>
+      </div>
+      <div class="scroll-note"><span></span> Scroll to explore</div>
+    </section>
+
+    <section class="statement section-pad" id="about">
+      <div class="section-label">01 / About</div>
+      <div class="statement-layout">
+        <h2 class="display reveal">I turn complex<br /><span>problems into</span><br />clear experiences.</h2>
+        <div class="statement-copy reveal">
+          <p class="lead">I'm a developer who cares about the details people feel but rarely notice.</p>
+          <p>From responsive interfaces to animated interactions, I like working at the intersection of logic and visual storytelling. This portfolio is also my Round 2 experiment with GSAP, timelines, easing, ScrollTrigger and purposeful motion.</p>
+          <a class="arrow-link" href="#contact">Let's build something <span>↗</span></a>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>DESIGN × CODE × MOTION ×</span><span>DESIGN × CODE × MOTION ×</span><span>DESIGN × CODE × MOTION ×</span></div></div>
+    </section>
+
+    <section class="skills section-pad">
+      <div class="section-label">02 / Skills</div>
+      <div class="skills-head reveal"><h2 class="display">Tools I use to<br /><span>make things happen.</span></h2><p>My toolkit changes with the problem. I prefer fundamentals, then add the right tools for speed and quality.</p></div>
+      <div class="skills-grid">
+        <article class="skill-card reveal"><span class="skill-no">01</span><h3>Front-end</h3><p>HTML · CSS · JavaScript · React · Responsive UI</p><div class="skill-bar"><span style="--level:92%"></span></div><small>92%</small></article>
+        <article class="skill-card reveal"><span class="skill-no">02</span><h3>Motion</h3><p>GSAP · ScrollTrigger · CSS transitions · Interaction design</p><div class="skill-bar"><span style="--level:86%"></span></div><small>86%</small></article>
+        <article class="skill-card reveal"><span class="skill-no">03</span><h3>Design</h3><p>Figma · Design systems · Prototyping · Visual hierarchy</p><div class="skill-bar"><span style="--level:80%"></span></div><small>80%</small></article>
+        <article class="skill-card reveal"><span class="skill-no">04</span><h3>Workflow</h3><p>Git · GitHub · Vercel · Accessibility · Performance</p><div class="skill-bar"><span style="--level:88%"></span></div><small>88%</small></article>
+      </div>
+    </section>
+
+    <section class="work section-pad" id="work">
+      <div class="section-label">03 / Selected work</div>
+      <div class="work-intro reveal"><h2 class="display">Projects with a<br /><span>point of view.</span></h2><p>Selected concepts showing how I approach product thinking, visual systems and motion.</p></div>
+      <div class="projects">
+        <article class="project project-large reveal">
+          <a href="#contact" class="project-visual visual-one magnetic-target" aria-label="Open Pulse project">
+            <div class="project-ui"><div class="ui-top"><span>PULSE / 01</span><span>+ 24%</span></div><div class="pulse-line"></div><div class="ui-bars"><i></i><i></i><i></i><i></i></div></div>
+            <span class="project-arrow">↗</span>
+          </a>
+          <div class="project-info"><div><span class="tag">PRODUCT · UX</span><h3>Pulse Finance</h3></div><p>A calm financial dashboard designed around clarity, confidence and progressive disclosure.</p></div>
+        </article>
+        <article class="project reveal">
+          <a href="#contact" class="project-visual visual-two magnetic-target" aria-label="Open Orbit project"><div class="orbit-shape"><i></i><i></i><i></i></div><span class="project-arrow">↗</span></a>
+          <div class="project-info"><div><span class="tag">EXPERIMENT · GSAP</span><h3>Orbit Studio</h3></div><p>An immersive landing page exploring scroll-driven depth and kinetic typography.</p></div>
+        </article>
+        <article class="project reveal">
+          <a href="#contact" class="project-visual visual-three magnetic-target" aria-label="Open Frame project"><div class="frame-stack"><span>F</span><span>R</span><span>A</span><span>M</span><span>E</span></div><span class="project-arrow">↗</span></a>
+          <div class="project-info"><div><span class="tag">BRANDING · WEB</span><h3>Frame Notes</h3></div><p>A portfolio system for a photographer, balancing editorial layouts with playful interactions.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="experience section-pad" id="experience">
+      <div class="section-label">04 / Experience</div>
+      <div class="timeline">
+        <article class="timeline-item reveal"><span class="year">2026 — NOW</span><div><h3>Creative Developer <span>Independent</span></h3><p>Building front-end experiments, portfolio sites and interaction systems while learning new technologies independently.</p></div></article>
+        <article class="timeline-item reveal"><span class="year">2025 — 2026</span><div><h3>Web Development Learner <span>Sheryians Coding School</span></h3><p>Strengthened JavaScript and front-end fundamentals through projects, collaboration and iterative challenges.</p></div></article>
+        <article class="timeline-item reveal"><span class="year">2024 — 2025</span><div><h3>Design & Code Projects <span>Self-directed</span></h3><p>Explored interface design, responsive systems and the relationship between motion and usability.</p></div></article>
+      </div>
+    </section>
+
+    <section class="education section-pad">
+      <div class="section-label">05 / Education & achievements</div>
+      <div class="edu-grid">
+        <div class="edu-block reveal"><span class="mini-label">EDUCATION</span><h2>Web Development</h2><p>Sheryians Coding School · 2025—2026</p><span class="number">01</span></div>
+        <div class="edu-block reveal"><span class="mini-label">ACHIEVEMENT</span><h2>Hackathon Builder</h2><p>Mini Hackathon · Round 2 — GSAP portfolio challenge</p><span class="number">02</span></div>
+        <div class="edu-block reveal"><span class="mini-label">FOCUS</span><h2>Learning in public</h2><p>Documenting experiments, sharing work and improving through feedback.</p><span class="number">03</span></div>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="contact">
+      <div class="contact-grid"></div>
+      <div class="section-label">06 / Contact</div>
+      <div class="contact-content reveal"><p class="eyebrow"><span class="dot"></span> Have a project in mind?</p><h2 class="display">Let's make it<br /><em>move.</em></h2><a class="email-link magnetic" href="mailto:hello@example.com">hello@example.com <span>↗</span></a></div>
+      <div class="contact-bottom"><span>GitHub · LinkedIn · Instagram</span><span>© 2026 Devon Ray</span></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="src/script.js"></script>
+</body>
+</html>
